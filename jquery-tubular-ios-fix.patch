@@ -1,0 +1,33 @@
+diff --git a/js/jquery.tubular.1.0.js b/js/jquery.tubular.1.0.js
+index 0374d14..2ffe7dd 100644
+--- a/js/jquery.tubular.1.0.js
++++ b/js/jquery.tubular.1.0.js
+@@ -39,7 +39,8 @@
+             $node = $(node); // cache wrapper node
+ 
+         // build container
+-        var tubularContainer = '<div id="tubular-container" style="overflow: hidden; position: fixed; z-index: 1; width: 100%; height: 100%"><div id="tubular-player" style="position: absolute"></div></div><div id="tubular-shield" style="width: 100%; height: 100%; z-index: 2; position: absolute; left: 0; top: 0;"></div>';
++        var tubularContainer = '<div id="tubular-container" style="overflow: hidden; position: fixed; z-index: 1; width: 100%; height: 100%"><div id="tubular-player" style="position: absolute"></div>'; 
++        //</div><div id="tubular-shield" style="width: 100%; height: 100%; z-index: 2; position: absolute; left: 0; top: 0;"></div>';
+ 
+         // set up css prereq's, inject tubular container and set up wrapper defaults
+         $('html,body').css({'width': '100%', 'height': '100%'});
+@@ -68,14 +69,14 @@
+ 
+         window.onPlayerReady = function(e) {
+             resize();
+-            if (options.mute) e.target.mute();
+-            e.target.seekTo(options.start);
+-            e.target.playVideo();
++//            if (options.mute) e.target.mute();
++//            e.target.seekTo(options.start);
++//            e.target.playVideo();
+         }
+ 
+         window.onPlayerStateChange = function(state) {
+             if (state.data === 0 && options.repeat) { // video ended and repeat option is set true
+-                player.seekTo(options.start); // restart
++//                player.seekTo(options.start); // restart
+             }
+         }
+ 
